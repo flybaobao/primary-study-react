@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	//如果渲染的html是vdom, 直接渲染
+	    	var label = <p>I am a label</p>
+	    	
+	    	//如果是字符串呢
+	    	//    不要直接渲染, 会显示成文本
+	    	//    dangerouslySetInnerHTML属性
+	    	//    值是对象, 对象需要有个属性 __html
+	    	//        你把要显示的值作为__html的值
+	    	var str = "<li>heeh haha</li>"
+	    	
+		    	
+	    	//view - virtual dom
+	    	var vdom = <div>hello world {message}
+	    	              <p>{label}</p>
+	    	              <p>{str}</p>
+	    	              <p dangerouslySetInnerHTML={ {__html:str} }></p>
+            	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

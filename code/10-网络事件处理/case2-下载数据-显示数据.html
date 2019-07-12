@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="../jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	
+	    	
+
+
+            //component
+            var Hello = React.createClass({
+                
+                getInitialState:function(){
+                    return {
+                        list:[]
+                    }
+                },
+                
+               
+                //组件已经加载(生命周期的一个函数)
+                componentDidMount:function (){
+                    
+                    //此处this是组件的this
+                    var self = this;
+                    
+                    var url = "http://192.168.0.153/project/dou/api/public/index.php?m=main&a=list"
+                    $.getJSON(url,{},function(r){
+                        
+                        var l = r.data;
+ 
+                        //数据驱动界面
+                        self.setState({
+                            list:l
+                        })
+ 
+                    })
+                    
+                },
+                
+
+                render:function(){
+
+
+                    var imagePrefix = "http://192.168.0.153/project/dou/api/"
+
+                    var vd = <div>Hello component
+                        <p>
+                            {
+                                
+                                this.state.list.map(function(v,k){
+                                    return <li><p>{v.title}</p>
+                                        <p><img src={imagePrefix+v.img_url} alt="" /></p>
+                                    </li>
+                                })
+                            }
+                        </p>
+                         
+                    </div>
+                    return vd;
+                }
+                
+            })
+ 
+ 
+ 
+            //view - virtual dom
+            var vdom = <div>hello world {message}
+                <div> <Hello></Hello> </div>
+            </div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

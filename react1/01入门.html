@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		
+		
+	</head>
+	<body>
+		<!--显示react区域-->
+		<div class="example">
+			
+		</div>
+		<div id="app">
+			
+		</div>
+		<!--react 使用javascript一个变种，jsx-->
+		<script type="text/jsx">
+//			var a = 10;
+//			alert(a);
+//			model
+			var message = "hehe";
+//			view - virtual dom 虚拟dom到真实dom的转化
+//			<div>hello world</div>是虚拟dom,不加引号
+			var haha = <div>hello world{message}</div>
+			
+			//利用react渲染虚拟dom
+			//参数1：虚拟dom
+			//参数2：渲染到哪儿
+			ReactDOM.render(haha,document.getElementsByClassName('example')[0]);
+			ReactDOM.render(haha,document.getElementById('app'));
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

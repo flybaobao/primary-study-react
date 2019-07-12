@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	//react列表渲染没有指令   v-for/ng-repeat
+	    	var list = ["zhangsan","lilei","hanmeimei"]
+	    	
+	    	
+	    	//view - virtual dom
+	    	var vdom = <div>hello world {message}
+	    	
+	    	  {
+	    	      /*map是js的函数, 用于遍历数组*/
+	    	      list.map(function(value,key){
+	    	          return <li>{value}</li>
+	    	      })
+	    	  }
+	    	
+	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	    <script type="text/javascript">
+	    	var list = ["zhangsan","lilei","hanmeimei"]
+	    	list.map(function (v,k) {
+	    		//alert(v);
+	    	})
+	    	
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

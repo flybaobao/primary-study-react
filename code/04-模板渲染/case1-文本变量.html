@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	 
+	
+	    	
+	    	//view - virtual dom
+	    	var vdom = <div>hello world {message}
+	    	              <p>{message}</p>
+	    	              <p>{'test'}</p>
+            	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

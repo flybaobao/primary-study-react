@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	var a = 10;
+	    	
+	    	function sum(a,b){
+	    	    return a+b;
+	    	}
+	    	
+	    	//view - virtual dom
+	    	var vdom = <div>hello world {message}
+	    	              {/*我是vdom中的注释*/}
+	    	              {//我是单行注释,后面大括号放下面
+	    	              }
+            	    	  <p>a= {a}</p>
+            	    	  <p>{'abc '+a}</p>
+            	    	  <p>{10+10}</p>
+            	    	  <p>{10*10}</p>
+            	    	  <p>{'10'+'10'}</p>
+            	    	  <p>{sum(100,200)}</p>
+            	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

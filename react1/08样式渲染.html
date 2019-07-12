@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+				.a{color: purple;border: 1px solid black;}
+		</style>
+	
+		
+	</head>
+	<body>
+		<div id="example">
+			
+		</div>
+		<script type="text/jsx">
+			var s1 = {
+				'color':'red',
+				'backgroundColor':'pink'
+			}
+			var vdom = <div ><p style = { {'backgroundColor':'pink','color':'red','width':'100px','height':'100px'} }>123133</p>
+			<p style={s1}>ssssss</p>
+			<p className = {'a'}>215484545841</p>
+			<p className = 'a'>215484545841</p>
+			</div>
+			ReactDOM.render(vdom,document.getElementById('example'));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="example" class="app">
+			
+		</div>
+		<script type="text/jsx">
+			var message = "<li>我错了</li>";
+			var vdom = <div>
+						<p>{message}</p>
+						<p dangerouslySetInnerHTML ={{__html:message}}></p>
+						</div>;
+			
+			ReactDOM.render(vdom,document.getElementById("example"));		
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

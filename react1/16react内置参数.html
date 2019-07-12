@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+		<div id="example">
+			
+		</div>
+		
+		<script type="text/jsx">
+			var Hello = React.createClass({
+				getDefaultProps:function(){
+					return {
+						num1:0,
+						num2:1212
+					}
+				},
+				render: function(){
+					var oo = <div>这是内置的
+					<p>{this.props.num1}</p>
+					<p>{this.props.num2}</p>
+					
+					</div>
+					return oo;
+				}
+				
+				
+			});
+			
+			var vdom = <div>
+						<h><Hello num1 = "1000" num2 = "2"></Hello></h>
+				
+				
+			</div>
+			
+			
+			ReactDOM.render(vdom,document.getElementById('example'));
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

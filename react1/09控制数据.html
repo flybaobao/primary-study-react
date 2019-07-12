@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+		
+		<div id="example">
+			
+		</div>
+		<script type="text/jsx">
+			var r = '不可以改变我的内容的';
+			var vdom = 
+			<div>
+			
+			<div style={ {'backgroundColor':'pink','color':'red','width':'200px','height':'200px'} }>
+						<input type="text" value={r}/>
+			
+						</div>
+						</div>;
+			ReactDOM.render(vdom,document.getElementById('example'));
+		</script>
+	</body>
+</html>

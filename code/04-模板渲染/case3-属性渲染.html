@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	//
+	    	var burl = "http://www.baidu.com"; 
+	        var isrc = "head.png"
+	    	
+	    	
+	    	//注意: 渲染的时候, 不带双引号,单引号
+	    	//view - virtual dom
+	    	var vdom = <div>hello world {message}
+	    	                <a href={burl}>百度</a>
+	    	                <img src={isrc} alt="" />
+            	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	
+	    	var isShow = true;
+	    	
+	    	
+	    	//怎么变化
+	    	//    <p>我是需要切换显示的文本</p>  是变量,表达式
+	    	//    {<p>我是需要切换显示的文本</p>}
+	    	//    {isShow && <p>我是需要切换显示的文本</p>}
+	    	
+	    	
+	    	//view - virtual dom
+	    	var vdom = <div>hello world {message}
+	    	
+	    	    {isShow && <p>我是需要切换显示的文本</p>}
+	    	
+	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

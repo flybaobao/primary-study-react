@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		<style type="text/css">
+            
+            .c1{
+                color:red;
+            }
+            .c2{
+                border: 1px solid red;
+            }
+            
+        </style>
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	
+	    	
+	    	//view - virtual dom
+	    	var vdom = <div>hello world {message}
+	    	    
+	    	          {/*代码时js中, class是js关键字*/}
+	    	              <p className="c1 c2">hehe</p>
+	    	              <p className={ "c1 c2" }>hehe</p>
+            	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

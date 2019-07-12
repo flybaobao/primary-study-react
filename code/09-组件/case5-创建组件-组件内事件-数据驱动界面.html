@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	
+	    	
+
+
+            var Hello = React.createClass({
+                dealClick:function(){
+                    //alert("CCC")
+                    
+                    //Step3: 数据驱动
+                    //不要直接修改state
+                    var newCount = this.state.count+1;
+                    this.setState({
+                        count:newCount
+                    })
+                },
+                
+                //Step1:
+                //获取初始化state
+                //  state中有个变化 count, 默认值是0
+                //  注意1: 读取 this.state.count
+                //  注意2: 修改使用 this.setState()
+                getInitialState:function(){
+                    return {
+                        count:0
+                    }
+                },
+                
+                render:function(){
+                    var s1 = {
+                        width:"300px",
+                        
+                        border:"1px solid black",
+                    }
+                    
+                    var vd = <div style={s1}>
+                        {/*Step2: 使用state*/}
+                        <p>Count:{this.state.count}</p>
+                        <p><button onClick={this.dealClick}>增加</button></p>
+                    </div>
+                    
+                    return vd;
+                }
+                
+            })
+ 
+            //view - virtual dom
+            var vdom = <div>hello world {message}
+                <div> <Hello></Hello> </div>
+            </div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

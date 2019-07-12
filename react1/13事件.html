@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+		<div id="example">
+			
+		</div>
+		
+		<script type="text/jsx">
+			//var 
+			function dealClick(){
+				alert('1')
+			}
+			var vdom = <div>
+					
+				<button onClick={dealClick}>单击按钮</button>
+				<button onDoubleClick = {dealClick}>双击按钮</button>
+			</div>
+                       			
+			
+			  ReactDOM.render(vdom,document.getElementById('example'));
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	
+	    	var s1 = {
+	    	    'color':'red',
+	    	    'fontSize':'36px'}
+	    
+	    	//view - virtual dom
+	    	var vdom = <div>hello world {message}
+	    	    
+	    	              {/*vdom中不要用 style='color:red'*/}
+	    	    
+	    	              <p style={ {'color':'red','fontSize':'36px'}  }>hello</p>
+	    	              
+	    	              <p style={ s1  }>hello</p>
+            	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

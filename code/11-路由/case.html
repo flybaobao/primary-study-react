@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="../react/ReactRouter.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	        
+	        //导入react一些需要用到的变量 jsx
+	        var {Router,Route,IndexRoute,IndexLink,Link} = ReactRouter;
+	        
+	        
+	        
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	//Step1: 创建界面
+	    	var Main = React.createClass({
+	    	    render:function(){
+	    	        
+	    	        var vd = <div>Main</div>
+	    	        return vd;
+	    	    }
+	    	})
+	    	
+	    	var Read = React.createClass({
+                render:function(){
+                    
+                    var vd = <div>Read</div>
+                    return vd;
+                }
+            })
+            
+            
+      
+	    	
+	    	//Step3: app加载路由
+            //Step4: 有个view能切换路由 
+            //Step5: 使用链接跳转路由	    	
+	    	var App = React.createClass({
+	    	    
+	    	    render:function(){
+                    
+                    var vd = <div>
+                        
+                        <div>
+                            header
+                        </div>
+                        
+                        <div id="">
+                        	{this.props.children}
+                        </div>
+ 
+                        <div>
+                            <IndexLink to="/Main">首页</IndexLink>
+                            <Link to="/Read">阅读</Link>
+                        </div>
+                        
+                    </div>
+                    return vd;
+                }
+	    	    
+	    	})
+	    	
+	    	
+	    	
+	    	//Step2: 创建路由规则
+	    	//view - virtual dom
+	    	var vdom = <div>
+	    	    <Router>
+	    	        <Route path="/" component={App}>
+	    	            <IndexRoute component={Main}></IndexRoute>
+	    	            <Route path="Main" component={Main}></Route>
+	    	            <Route path="Read" component={Read}></Route>
+	    	        </Route>
+	    	    </Router>
+	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

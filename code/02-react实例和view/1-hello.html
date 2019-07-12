@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--S1: 引入头文件-->
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <!--react显示区域-->
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <!--react 使用javascript一个变种, jsx-->
+	    <script type="text/jsx">
+	    	
+	    	//var a = 10;
+	    	//alert(a);
+	    	
+	    	//model 
+	    	var message = "hehe";
+	    	
+	    	
+	    	//view - virtual dom   虚拟dom到真实dom的转化
+	    	//    <div>hello world</div> 是虚拟dom,不加引号
+	    	//    jsx语法中虚拟dom
+	    	//var vdom = <div>hello world </div>
+	    	
+	    	//虚拟dom 转化成语句, 转化为真实dom, 显示到界面上
+	    	//参数1: 标签名字
+	    	//参数2: 标签的属性  class=""...
+	    	//参数3: 标签的内容
+	    	var vdom = React.createElement("div",null,"hello world");
+	    	
+	    	
+	    	
+	    	
+	    	//利用react渲染虚拟dom
+	    	//参数1: 虚拟dom
+	    	//参数2: 渲染到哪儿
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	    <script type="text/javascript">
+	    	
+	    </script>
+	    
+	</body>
+</html>

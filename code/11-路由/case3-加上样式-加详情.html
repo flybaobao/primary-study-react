@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="../react/ReactRouter.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+			    margin: 0;
+			    padding: 0;
+			}
+			a{
+			    color: black;
+			    text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	        
+	        //Step0:  导入路由的js文件
+	        // 引入需要的标签对象
+	        //导入react一些需要用到的变量 jsx
+	        //     Router 路由对象
+	        //     Route  一个路由
+	        //     IndexRoute   主路由  ,  域名/  显示路由
+	        //     IndexLink    主链接, 直接跳转到 /
+	        //     Link 链接
+	        var {Router,Route,IndexRoute,IndexLink,Link} = ReactRouter;
+	        
+	        
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	//Step1: 创建界面
+	    	var Main = React.createClass({
+	    	    render:function(){
+	    	        
+	    	        var vd = <div>Main</div>
+	    	        return vd;
+	    	    }
+	    	})
+	    	
+	    	var Read = React.createClass({
+                
+                //初始化状态 this.state.list
+                getInitialState:function(){
+                    return {
+                        list:[]
+                    }  
+                },
+                
+                
+                //组件初始化调用的函数
+                componentDidMount:function(){
+                    
+                    var url = "http://192.168.0.3/project/artist/api/public/index.php?m=main&a=list";
+                    var self = this;
+                    
+                    $.getJSON(url,{},function(r){
+                        
+                        var desc = r.desc;
+                        //alert("desc = "+desc)
+                        var list = r.data;
+                        for(var i=0; i<list.length;i++){
+                            
+                            var item = list[i];
+                            console.log("t"+item.title);
+                        }
+                        
+                        //数据驱动界面
+                        self.setState({
+                            list:list
+                        })
+                        
+                    })
+                },
+                    
+                    
+                //这是组件的渲染函数
+                //注意: 一定要加, 不加报错
+                render:function(){
+                    
+                    var imagePrefix = "http://192.168.0.3/project/artist/api/";
+                    
+                    var cellStyle = {
+                        padding:"10px"
+                    }
+                     var cellImageStyle = {
+                        width:"100%"
+                    }
+                    
+                    var vd = <div>
+                         <p>{
+                             
+                             this.state.list.map(function(v,k){
+                                 return <div style={cellStyle}>
+                                     <Link to={'/ReadDetail/'+v.id}>
+                                         <p>{v.category}</p>
+                                         <p>{v.title}</p>
+                                         <p>作者:{v.author_name}</p>
+                                         <p><img style={cellImageStyle} src={imagePrefix+v.img_url} alt="" /></p>
+                                         <p>{v.forward}</p>
+                                         <p>发布时间:{v.post_date} 喜欢:{v.like_count}</p>
+                                     </Link>
+                                 </div>
+                             })
+                             
+                         }</p>
+                    </div>
+                    
+                    return vd;
+                }
+                
+            })
+            
+            var Music = React.createClass({
+                render:function(){
+                    
+                    var vd = <div>Music</div>
+                    return vd;
+                }
+            })
+            
+            
+            var Movie = React.createClass({
+                render:function(){
+                    
+                    var vd = <div>Movie</div>
+                    return vd;
+                }
+            })
+            
+            
+            var ReadDetail = React.createClass({
+                render:function(){
+                    
+                    var vd = <div>ReadDetail
+                    
+                        <p>路由参数id: {this.props.params.id}</p>
+                    
+                    </div>
+                    return vd;
+                }
+            })
+            
+            
+            
+      
+	    	//显示的主界面
+	    	//Step3: app加载路由
+            //Step4: 有个view能切换路由 
+            //Step5: 使用链接跳转路由	    	
+	    	var App = React.createClass({
+	    	   
+	    	    
+	    	    render:function(){
+	    	        
+	    	        
+	    	        //组件的样式在组件内部, 高内聚
+                    var headerStyle = {
+                        position:"fixed",
+                        width:"100%",
+                        height:"44px",
+                        backgroundColor:"#f7f7f7",
+                        borderBottom:"1px solid #ccc",
+                        textAlign:"center",
+                        lineHeight:"44px"
+                    }
+                    
+                    var footerStyle = {
+                        position:"fixed",
+                        width:"100%",
+                        height:"49px",
+                        bottom:"0px",
+                        backgroundColor:"#f7f7f7",
+                        borderTop:"1px solid #ccc",
+                        textAlign:"center",
+                        lineHeight:"44px"
+                    }
+                    
+                    var contentStyle = {
+                        paddingTop:"44px",
+                        paddingBottom:"49px"
+                    }
+                    
+                    var footerItemStyle = {
+                        display:"block",
+                        float:"left",
+                        width:"25%",
+                        height:"100%"
+                    }
+                    
+                    var vd = <div>
+                        
+                        <div style={headerStyle}>
+                            header
+                        </div>
+                        
+                        <div style={contentStyle}>
+                        	{this.props.children}
+                        </div>
+ 
+                        <div style={footerStyle}>
+                            <IndexLink style={footerItemStyle} to="/Main">首页</IndexLink>
+                            <Link style={footerItemStyle} to="/Read">阅读</Link>
+                            <Link style={footerItemStyle} to="/Music">音乐</Link>
+                            <Link style={footerItemStyle} to="/Movie">影视</Link>
+                        </div>
+                        
+                    </div>
+                    return vd;
+                }
+	    	    
+	    	})
+	    	
+	    	
+	    	
+	    	//Step2: 创建路由规则
+	    	//view - virtual dom
+	    	var vdom = <div>
+	    	    <Router>
+	    	        <Route path="/" component={App}>
+	    	            <IndexRoute component={Main}></IndexRoute>
+	    	            <Route path="Main" component={Main}></Route>
+	    	            <Route path="Read" component={Read}></Route>
+	    	            <Route path="Music" component={Music}></Route>
+                        <Route path="Movie" component={Movie}></Route>
+                        <Route path="ReadDetail/(:id)" component={ReadDetail}></Route>
+	    	        </Route>
+	    	    </Router>
+	    	</div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

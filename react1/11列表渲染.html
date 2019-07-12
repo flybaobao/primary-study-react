@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+		<div id="example">
+			
+		</div>
+		
+		<script type="text/javascript">
+			var list = ["zz","aa","mm"];
+			var list1 = ["zz","aa","mm"];
+			list.concat(list1);
+			console.log(list.concat(list1));
+		</script>
+		<script type="text/jsx">
+			var list = ["zz","aa","mm"];
+			
+			var vdom = <div>
+				{
+					/*map是js的函数，用于遍历数组*/
+					list.map(function(vue,index){
+						return <li>{vue}</li>;
+					})
+					
+				}
+			
+			</div>
+			
+			
+			ReactDOM.render(vdom,document.getElementById('example'));
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

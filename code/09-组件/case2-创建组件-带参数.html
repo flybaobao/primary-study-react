@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+	    
+	    <div id="example">
+	    	
+	    </div>
+	    
+	    <script type="text/jsx">
+	    	
+		    //model 
+	    	var message = "hehe";
+	    	
+	    	
+	    	
+
+
+            //component
+            //命名规范: 组件第一个字母一定要大写
+            var Hello = React.createClass({
+                //这是组件的渲染函数
+                //注意: 一定要加, 不加报错
+                render:function(){
+                    
+                    //最外层一定是根节点
+                    var vd = <div>Hello component
+                        <p>component p1 {this.props.num1}</p>
+                         <p>component p2 {this.props.num2}</p>
+                    </div>
+                    
+                    return vd;
+                }
+                
+            })
+ 
+            //view - virtual dom
+            var vdom = <div>hello world {message}
+                <div> <Hello num1="1000" num2="2000"></Hello> </div>
+            </div>
+
+
+            //render
+	    	ReactDOM.render(
+	    	    vdom,
+	    	    document.getElementById("example"));
+	    	
+	    	
+	    </script>
+	    
+	</body>
+</html>

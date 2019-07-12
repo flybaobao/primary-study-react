@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+		<div id="example">
+			
+		</div>
+		创建组件，用var +标签名 = React.createClass({用到的是对象，里面函数等，点击事件，获取默认参数getDefaultProps});
+		<script type="text/jsx">
+			var message = 'hehe';
+			var Hello = React.createClass({
+				dealClick:function(){
+					alert('1')
+				},
+				
+				render:function(){
+					var rr = <div>说啥哩
+						<p><button onClick={this.dealClick}>点击</button></p>
+					</div>
+					
+					return rr;
+					
+				}
+				
+			})
+			var vdom = <div>{message}
+				<Hello></Hello>
+				
+			</div>
+			ReactDOM.render(vdom,document.getElementById('example'));
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

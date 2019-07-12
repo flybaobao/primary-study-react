@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+		<!--react显示区域-->
+		<div class="example">
+		    
+		</div>
+		<!--react使用javascript一个变种，jsx-->
+		<script type="text/jsx">
+//			var a = 20;
+//			alert(a);
+			//model
+			var message = "hehe";
+			//view----virtual dom 虚拟dom到真实dom转化
+			//<div></div>是虚拟dom,不用加引号
+			//jsx语法中虚拟dom
+			//var vdom= <div>这里有个大傻逼</div>
+			//虚拟dom转化成语句,转化为真实dom,显示到界面上
+			//参数1:标签的名字,
+			//参数2:标签的属性,class = ""
+			//参数3:标签的内容
+			
+			var vdom = React.createElement('div',null,'hello world');
+			
+			
+			//利用react渲染虚拟dom
+			//参数1：虚拟dom
+			//参数2：渲染到哪儿
+			ReactDOM.render(vdom,document.getElementsByClassName('example')[0])
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

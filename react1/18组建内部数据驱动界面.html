@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</head>
+	<body>
+		<div id="example">
+			
+		</div>
+		
+		<script type="text/jsx">
+			var Hello = React.createClass({
+				dealClick:function(){
+					//alert('ccc')
+					//数据驱动
+					var newCount = this.state.count +1;
+					this.setState({
+						count : newCount
+					});
+				},
+				//第一步，获取初始化的state
+				//state中有个变化的count,默认值是0
+				//注意一：读取this.state.count
+				//注意二：修改使用 this.setState()
+				getInitialState:function(){
+					return  {
+						count:0
+					}
+				},
+				
+				render:function(){
+					 var s1 = {
+                        width:"300px",
+                        
+                        border:"1px solid black",
+                    }
+                    
+					var rr = <div style={s1}>
+							<p>{this.state.count}</p>
+							<button onClick = {this.dealClick}>增加</button>
+						
+						<div>
+					
+					return rr;
+					
+				}
+				
+				
+			});
+			
+			var vdom = <div>
+				
+				<Hello></Hello>
+				
+			</div>
+			
+			
+			ReactDOM.render(vdom,document.getElementById('example'));
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

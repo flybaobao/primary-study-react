@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="react/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="react/JSXTransformer.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		
+	</head>
+	<body>
+		<div id="example">
+			
+		</div>
+		<script type="text/jsx">
+			var ll = "example";
+			var Hello = React.createClass({
+				render:function(){
+					var r  = <div>
+						{ll}
+						<p>hello body
+						{this.props.num1}
+						{this.props.num2}
+						</p>
+					</div>
+					
+				return r;	
+				}
+			})
+			var vdom = <div>
+				<Hello num1 = "200000" num2 = "30000"></Hello>
+				
+			</div>
+			
+			ReactDOM.render(vdom,document.getElementById('example'))
+			
+		</script>
+		
+	</body>
+</html>
